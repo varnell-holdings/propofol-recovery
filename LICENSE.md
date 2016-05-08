@@ -1,0 +1,1 @@
+This project is Creative Commons
