@@ -1,2 +1,1 @@
-
-identifier,sex,age,weight(kg),height(cm),alcohol,ihd,hypertension,sleep apnoea,diabetes,cvd,dementia,asa,"procedure(p,c,d)",start,finish,last dose time,total dose(mg),n/v,pain,tolerating,ready for discharge,aldrete,time discharge assessment
+patient/control,identifier,sex,age,weight,height,alcohol,ihd,hypertension,sleep apnoea,diabetes,cvd,dementia,asa,procedure,start,finish,last dose time,total dose,n/v,pain,tolerating,ready for discharge,aldrete,time discharge assessment
