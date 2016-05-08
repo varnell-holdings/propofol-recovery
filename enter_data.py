@@ -9,18 +9,22 @@ prompts = [('patient/control', r'^[pc]$'),('identifier',r'^\S+$'), ('sex',r'^[mf
      ('ready for discharge y/n', r'^[yn]$'), ('aldrete', r'^\d{1,2}$'),('time discharge assessment', r'^\d\d:\d\d$')]
 
 def entry():
-    with open('propofol_data.csv', 'ab') as csvfile:
+    with open('data.csv', 'ab') as csvfile:
         datawriter = csv.writer(csvfile, dialect='excel')
         while True:
             episode_data = []
+            count = 0
+            pat_cont = ''
             for data in prompts:
                 while True:
                     reply = raw_input(data[0] +':  ')
                     if re.search(data[1], reply):
                         episode_data.append(reply)
+                        count += 1
                         break
                     print '****** ?error ******'
-            assert len(episode_data) ==  len(prompts), 'There seems to be an error. ? missing data'
+                if count == 13 and episode_data[0] == 'c':
+                    break
             datawriter.writerow(episode_data)
             response = raw_input('Add another episode? (y/n):  ')
             if response == 'n':
